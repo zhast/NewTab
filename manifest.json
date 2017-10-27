@@ -1,5 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "NewTab",
-  "version": "0.1"
+  "name": "Chromatic",
+  "version": "1.0",
+  "description": "A new tab for Chrome designed for UTS students",
+
+  "browser_action": {
+    "default_icon": "logo.png"
+  },
+
+    "chrome_url_overrides": {
+      "newtab": "chromatic.html"
+    },
+
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "geolocation"
+  ]
 }
