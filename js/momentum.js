@@ -11,7 +11,7 @@ momentum.Core = function() {
   this.ampm = "AM";
   this.salutation = "morning";
   this.location = "";
-  
+
   this.timeEl = $("#time");
   this.quoteEl = $("#quote-text");
   this.weatherEl = $("#weather");
@@ -20,10 +20,10 @@ momentum.Core = function() {
   this.city = $("#location");
   this.lat;
   this.lon;
-  
+
   // weather controller
   this.weatherCtrl = new momentum.WeatherCtrl();
-  
+
   // quote controller
   this.quoteCtrl = new momentum.QuoteCtrl();
 };
@@ -31,7 +31,7 @@ momentum.Core = function() {
 momentum.Core.prototype = {
 	// `setTime` method
 	// This method should calculate the current time and save it to timeStr in the form HH:MM, like: 12:01 or 21:34.
-	// 
+	//
 	// hint. check out the `Date` object! Use `getHours` and `getMinutes`.
   setTime: function() {
 		// YOUR CODE HERE
@@ -52,7 +52,7 @@ momentum.Core.prototype = {
 		var mins = date.getMinutes();
 		if(mins < 10){
 			var txt = '0' + mins;
-			mins = txt; 
+			mins = txt;
 		}
 		var ret = '';
 		ret = ret + hours + ':' + mins;
@@ -60,7 +60,7 @@ momentum.Core.prototype = {
   },
 	// `setQuote` method
 	// This method should set the `quoteStr` property of the momentum core. This method will be used as the callback for quoteCtrl's `fetchQuote` function.
-	// 
+	//
 	// hint. check out the `Date` object! Use `getHours` and `getMinutes`.
 	// hint. figure out what kind of response the quoteData is going to be, and see how you might be able to access the quote of the day from that.
   setQuote: function(quoteData) {
@@ -70,7 +70,7 @@ momentum.Core.prototype = {
   },
 	// `setWeather` method
 	// This method should set the `weatherStr` property of the momentum core. This method will be used as the callback for weatherCtrl's `fetchWeather` function.
-	// 
+	//
 	// hint. figure out what kind of response the weatherData is going to be, and see how you might be able to access the quote of the day from that.
   setWeather: function(weatherData) {
 		// YOUR CODE HERE
@@ -121,12 +121,12 @@ momentum.Core.prototype = {
 		  this.updateWeather();
 		}.bind(this), error);
 		this.setTime();
-		
+
 		this.updateQuote();
 		this.render();
 
-		
-		
+
+
 
 	},
 	// `render` method
@@ -135,7 +135,7 @@ momentum.Core.prototype = {
   render: function() {
 		// YOUR CODE HERE
 		this.timeEl.text(this.timeStr);
-		this.greetingEl.text("Good " + this.salutation +", Ying Hang");
+		this.greetingEl.text("Good " + this.salutation +" Steven!");
 		this.ampmEl.text(this.ampm);
 		this.weatherEl.text(this.weatherStr);
 		this.quoteEl.text(this.quoteStr);
